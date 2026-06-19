@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum of N Numbers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+        }
+
+        h2 {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Sum of N Numbers</h2>
+
+    <input type="number" id="num" placeholder="Enter N">
+    <button onclick="findSum()">Calculate</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function findSum() {
+            let n = parseInt(document.getElementById("num").value);
+
+            if (isNaN(n) || n < 1) {
+                document.getElementById("result").innerHTML =
+                    "Please enter a positive number.";
+                return;
+            }
+
+            let sum = 0;
+
+            for (let i = 1; i <= n; i++) {
+                sum += i;
+            }
+
+            document.getElementById("result").innerHTML =
+                "Sum of numbers from 1 to " + n + " = " + sum;
+        }
+    </script>
+
+</body>
+</html>
